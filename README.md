@@ -1,6 +1,9 @@
 # MeanAngular6
 
+Based on an article at 
 https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application
+I fixed some material link and input parameters at api service method to run this demo. Angular 6 with Material GUI for frontend and ExpressJS on NodeJS to access MongoDB. This demo runs only on single server startup command (npm start) not like npm run start on angular and nodemon server.js on server. 
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 

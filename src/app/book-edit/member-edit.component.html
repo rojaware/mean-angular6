@@ -1,0 +1,48 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" (click)="memberDetails()">
+    <mat-icon>show</mat-icon>
+  </a>
+</div>
+<form [formGroup]="memberForm" (ngSubmit)="onFormSubmit(memberForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name" formControlName="name" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!memberForm.get('name').valid && memberForm.get('name').touched">Please enter name</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Membership type" formControlName="memberType" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!memberForm.get('memberType').valid && memberForm.get('memberType').touched">Please enter Membership</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!memberForm.get('email').valid && memberForm.get('email').touched">Please enter Email</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Education" formControlName="education" [errorStateMatcher]="matcher"></textarea>
+    <mat-error>
+      <span *ngIf="!memberForm.get('education').valid && memberForm.get('education').touched">Please enter education</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Career" formControlName="career" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!memberForm.get('career').valid && memberForm.get('career').touched">Please enter Job</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Birth Year" formControlName="birthYear" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!memberForm.get('birthYear').valid && memberForm.get('birthYear').touched">Please enter Birth Year</span>
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button type="submit" [disabled]="!memberForm.valid" mat-raised-button color="primary">
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
+</form>

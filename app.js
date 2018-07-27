@@ -4,7 +4,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes');
 
 var app = express();
 
@@ -23,10 +23,9 @@ app.use(function (req, res, next) {
 
 // connect db
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mean-angular6', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://localhost/roja', { promiseLibrary: require('bluebird') })
     .then(() => console.log('connection successful'))
     .catch((err) => console.error(err));
-
 
 // error handler
 app.use(function (err, req, res, next) {
